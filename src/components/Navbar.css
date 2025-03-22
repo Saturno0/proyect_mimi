@@ -4,6 +4,12 @@ div {
     unicode-bidi: isolate;
 }
 
+li:hover {
+    cursor: pointer;
+    scale: 1.15;
+    transition: all 0.15s;
+}
+
 .navbar {
     font-family: Arial, sans-serif;
     position:fixed;
@@ -22,12 +28,37 @@ div {
   }
   
   .nav-container {
-    display: block;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     position: relative;
-  }
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#logo {
+    flex: 1;
+    text-align: center;
+}
+
+.left-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
 
   .flex-row {
     align-items: center;
