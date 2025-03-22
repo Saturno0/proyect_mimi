@@ -48,7 +48,7 @@ const Navbar = () => {
   </div>
 
   {/* Logo */}
-  <div id="logo">CAMEO</div>
+  <div id="logo" className="logo">CAMEO</div>
 
   {/* Menú derecho */}
   <div className="right-menu">
