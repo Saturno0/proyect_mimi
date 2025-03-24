@@ -26,39 +26,39 @@ const Navbar = () => {
         </div>
 
         <div className="header-inner flex-row container">
-  {/* Menú izquierdo */}
-  <div className="left-menu">
-    <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-      <li className="dropdown"
-          onMouseEnter={() => setProductsOpen(true)}
-          onMouseLeave={() => setProductsOpen(false)}>
-        <span>PRODUCTOS ▾</span>
-        {productsOpen && (
-          <ul className="dropdown-menu">
-            {products.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        )}
-      </li>
-      <li>NEW IN</li>
-      <li>BESTSELLER</li>
-      <li>VER TODO</li>
-    </ul>
-  </div>
+          {/* Menú izquierdo */}
+          <div className="left-menu">
+            <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+              <li className="dropdown"
+                  onMouseEnter={() => setProductsOpen(true)}
+                  onMouseLeave={() => setProductsOpen(false)}>
+                <span>PRODUCTOS ▾</span>
+                {productsOpen && (
+                  <ul className="dropdown-menu">
+                    {products.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li>NEW IN</li>
+              <li>BESTSELLER</li>
+              <li>VER TODO</li>
+            </ul>
+          </div>
 
-  {/* Logo */}
-  <div id="logo" className="logo">CAMEO</div>
+          {/* Logo */}
+          <div id="logo" className="logo">CAMEO</div>
 
-  {/* Menú derecho */}
-  <div className="right-menu">
-    <ul className="nav-links">
-      <li>BUSCAR</li>
-      <li>ACCEDER</li>
-      <li>CARRITO (0)</li>
-    </ul>
-  </div>
-</div>
+          {/* Menú derecho */}
+          <div className="right-menu">
+            <ul className="nav-links">
+              <li>BUSCAR</li>
+              <li>ACCEDER</li>
+              <li>CARRITO (0)</li>
+            </ul>
+          </div>
+        </div>
 
         
       </div>
