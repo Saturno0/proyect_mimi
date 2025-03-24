@@ -1,0 +1,15 @@
+{"products" : [
+    {
+      "id": 1,
+      "name": "Remera Meteoro",
+      "image": "/images/remera-meteoro.jpeg",
+      "category": "animados",
+      "price": 25
+    },
+    {
+      "id": 2,
+      "name": "Ariana Grande",
+      "image": "/images/Ariana-Grande.jpeg",
+      "price": 25
+    }
+]}

@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
+import { products } from "../data/products.json";
+import "./Products.css";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  
 
   return (
     <div className="product-list">
