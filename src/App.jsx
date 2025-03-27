@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Navbar />
-      <Home />
+      <section><Navbar /></section>
+      <section><Home /></section>
     </div>
   );
 }

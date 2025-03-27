@@ -10,6 +10,21 @@
       "id": 2,
       "name": "Ariana Grande",
       "image": "/images/Ariana-Grande.jpeg",
+      "category": "musica",
+      "price": 25
+    },
+    {
+      "id": 3,
+      "name": "Remera Rayo McQueen",
+      "image": "/images/remera-rayo-mcqueen.jpeg",
+      "category": "animados",
+      "price": 25
+    },
+    {
+      "id": 4,
+      "name": "Remera Porche",
+      "image": "/images/remera-porche.jpeg",
+      "category": "autos",
       "price": 25
     }
 ]}
