@@ -15,10 +15,8 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Barra superior */}
       <div className="top-bar">MÍNIMO DE COMPRA DE $70.000 || ${"PRECIOS SIN IVA INCLUIDO"}</div>
 
-      {/* Navbar principal */}
       <div className="nav-container">
         {/* Menú pantalla chica */}
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>

@@ -1,0 +1,15 @@
+.product {
+    max-width: 500px;
+    margin: auto;
+    margin-left: 0;
+    padding: 95px 0;
+}
+
+#root {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.photos {}
+
+.product-info {}

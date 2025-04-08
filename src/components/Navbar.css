@@ -11,7 +11,7 @@ li:hover {
 }
 
 .navbar {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   height: 95px;
   font-family: Arial, sans-serif;
   background-color: #ddd;
