@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div id="logo" className="logo">CAMEO</div>
+          <Link to={`/`}><div id="logo" className="logo">CAMEO</div></Link>
 
           {/* Menú derecho */}
           <div className="right-menu">

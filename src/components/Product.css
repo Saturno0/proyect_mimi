@@ -1,15 +1,140 @@
+.breadcrumb {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 40px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+    font-size: 14px;
+}
+
 .product {
-    max-width: 500px;
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
     margin: auto;
-    margin-left: 0;
-    padding: 95px 0;
+    padding: 20px 40px 120px;
+    font-family: 'Arial', sans-serif;
 }
 
-#root {
-    padding-left: 0;
-    margin-left: 0;
+.photos {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-.photos {}
+.photos img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 0;
+}
 
-.product-info {}
+.product-info {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-info h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.product-info h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+.product-details {
+    margin: 20px 0;
+}
+
+.product-details p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.color-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.color-table th {
+    text-align: left;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.color-table td {
+    padding: 15px 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+}
+
+.color-table input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.stock-status {
+    color: #4CAF50;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.cart-summary {
+    margin-top: 30px;
+}
+
+.cart-summary p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+}
+  

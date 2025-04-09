@@ -4,6 +4,16 @@
   padding: 2rem;
 }
 
+Link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
