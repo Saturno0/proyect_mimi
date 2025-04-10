@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (cantProductsToBuy) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
 
@@ -54,7 +54,7 @@ const Navbar = () => {
             <ul className="nav-links">
               <li>BUSCAR</li>
               <li>ACCEDER</li>
-              <li>CARRITO (0)</li>
+              <Link to={`/carrito`}><li>CARRITO ({cantProductsToBuy})</li></Link>
             </ul>
           </div>
         </div>
