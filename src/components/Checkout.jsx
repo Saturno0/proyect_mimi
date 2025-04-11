@@ -13,6 +13,21 @@ function Checkout() {
         metodoPago: "tarjeta"
     });
 
+    const [cartItems] = useState([
+        {
+            name: "Remera Meteoro",
+            color: "Blanco",
+            quantity: 2,
+            price: 25
+        },
+        {
+            name: "Remera Meteoro",
+            color: "Negro",
+            quantity: 1,
+            price: 25
+        }
+    ]);
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -24,24 +39,37 @@ function Checkout() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        // Here you would integrate with your payment processor
-        // and send email confirmation
         try {
-            // Process payment
-            
-            // Send confirmation email
-            await sendConfirmationEmail(formData);
-            
-            // Redirect to success page or show success message
-            alert("¡Compra realizada con éxito! Revisa tu email para ver la confirmación.");
-        } catch (error) {
-            alert("Hubo un error al procesar tu compra. Por favor intenta nuevamente.");
-        }
-    };
+            const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = 500;
+            const finalTotal = total + shipping;
 
-    const sendConfirmationEmail = async (data) => {
-        // Implement email sending logic here
-        // You could use services like SendGrid, AWS SES, etc.
+            const orderData = {
+                ...formData,
+                items: cartItems,
+                total: finalTotal
+            };
+
+            const response = await fetch('http://localhost:3001/api/send-confirmation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert("¡Compra realizada con éxito! En breve recibiras un mensaje para realiar el pago.");
+                // Here you could redirect to a success page or clear the cart
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Hubo un error al procesar tu compra. Por favor intenta nuevamente." + error);
+        }
     };
 
     return (
@@ -149,15 +177,20 @@ function Checkout() {
 
                     <div className="order-summary">
                         <h2>Resumen del pedido</h2>
-                        {/* Here you would map through cart items */}
                         <div className="cart-items">
-                            {/* Cart items would be displayed here */}
+                            {cartItems.map((item, index) => (
+                                <div key={index} className="cart-item">
+                                    <p>{item.name} - {item.color}</p>
+                                    <p>Cantidad: {item.quantity}</p>
+                                    <p>Precio: ${item.price * item.quantity}</p>
+                                </div>
+                            ))}
                         </div>
                         
                         <div className="order-totals">
                             <div className="total-row">
                                 <span>Subtotal</span>
-                                <span>$6,300</span>
+                                <span>${cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0)}</span>
                             </div>
                             <div className="total-row">
                                 <span>Envío</span>
@@ -165,7 +198,7 @@ function Checkout() {
                             </div>
                             <div className="total-row total">
                                 <span>Total</span>
-                                <span>$6,800</span>
+                                <span>${cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 500}</span>
                             </div>
                         </div>
                     </div>
@@ -175,4 +208,4 @@ function Checkout() {
     );
 }
 
-export default Checkout; 
+export default Checkout;

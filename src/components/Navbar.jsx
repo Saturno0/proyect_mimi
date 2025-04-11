@@ -54,7 +54,7 @@ const Navbar = (cantProductsToBuy) => {
             <ul className="nav-links">
               <li>BUSCAR</li>
               <li>ACCEDER</li>
-              <Link to={`/carrito`}><li>CARRITO ({cantProductsToBuy})</li></Link>
+              <Link to={`/carrito`}><li>CARRITO (0)</li></Link>
             </ul>
           </div>
         </div>
