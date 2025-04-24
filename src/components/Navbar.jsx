@@ -50,6 +50,11 @@ const Navbar = (cantProductsToBuy) => {
           <Link to={`/`}><div id="logo" className="logo">CAMEO</div></Link>
 
           {/* Menú derecho */}
+
+          <div className="menu-icon">
+            <Link to={`/carrito`}>CARRITO (0)</Link>
+          </div>
+
           <div className="right-menu">
             <ul className="nav-links">
               <li>BUSCAR</li>

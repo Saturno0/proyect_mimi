@@ -5,6 +5,7 @@ img {
 }
 
 .product-list {
+    padding-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columnas máximo */
     gap: 20px; /* Espaciado entre elementos */
@@ -24,7 +25,7 @@ img {
 .card {
     width: 300px;
     height: auto;
-    margin: auto;
+    margin: 15px auto auto auto;
     text-decoration: none;
 }
 
