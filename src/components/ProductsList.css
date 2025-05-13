@@ -23,12 +23,19 @@ img {
 }
 
 .card {
+    padding: 2rem;
     width: 300px;
     height: auto;
     margin: 15px auto auto auto;
     text-decoration: none;
 }
 
+.card :first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 div .card :hover{
     background: #f0f0f0;

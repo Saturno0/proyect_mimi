@@ -10,44 +10,43 @@ li:hover {
   transition: all 0.15s;
 }
 
-.navbar {
-  border-bottom: 1px solid black;
-  height: 95px;
-  font-family: Arial, sans-serif;
-  background-color: #ddd;
-  position:fixed;
-  left: 0px;
-  right: 0;
-  top: 0;
-  width: 100%;
+.nav-links li:hover {
+  cursor: pointer;
+  scale: 1.15;
+  transition: all 0.15s;
 }
 
-.top-bar {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  font-size: 12px;
+.navbar {
+border-bottom: 1px solid black;
+height: 79.5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+font-family: Arial, sans-serif;
+background-color: #a89989;
+position: fixed;
+left: 0px;
+right: 0;
+top: 0;
+width: 100%;
+z-index: 1000;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0px ;
-  position: relative;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0px ;
+position: relative;
+width: 100%;
 }
 
 .header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-#logo {
-  flex: 1;
-  text-align: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
 }
 
 .left-menu {
@@ -57,23 +56,25 @@ li:hover {
 }
 
 .right-menu {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+flex: 1;
+display: flex;
+justify-content: flex-end;
 }
 
-
-
 .flex-row {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  width: 100%;
+align-items: center;
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-between;
+width: 100%;
 }
 
 .header-full-width .container {
-max-width: 100% !important;
+max-width: 100%;
+}
+
+.header-inner.flex-row.container {
+  height: 79px;
 }
 
 .header .flex-row {
@@ -81,8 +82,7 @@ height: 100%;
 }
 
 .container {
-padding-left: 15px;
-padding-right: 15px;
+padding: 0 15px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -92,6 +92,14 @@ margin-right: auto;
 
 #logo {
   width: 200px;
+  flex: 1;
+  text-align: center;
+  font-size: 30px;
+}
+
+#logo:hover {
+  scale: 1.05;
+  transition: all 0.15s;
 }
 
 .logo-center .logo {
@@ -102,20 +110,18 @@ margin-right: auto;
 
 .logo {
   line-height: 1;
-  font-size: 24px;
   text-align: center;
   font-weight: bold;
+  padding: 25px 25px 20px 25px;
+  margin: 0;
 }
 
-.flex-col {
-  max-height: 100%;
-}
 
 *, :after, :before, html {
   box-sizing: border-box;
 }
   
-  /* Estilos del menú en pantallas grandes */
+/* Estilos del menú en pantallas grandes */
   .nav-links {
     top: 0;
     align-items: center;
@@ -134,6 +140,20 @@ margin-right: auto;
     position: relative;
   }
   
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   /* Menú desplegable de productos */
   .dropdown-menu {
     position: absolute;
@@ -178,7 +198,7 @@ margin-right: auto;
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 76px;
       left: 0;
       background-color: white;
       width: 100%;
@@ -195,6 +215,7 @@ margin-right: auto;
   
     .nav-links.open {
       display: flex;
+      padding: 15px 0;
     }
   
     .dropdown-menu {

@@ -16,7 +16,6 @@ const Navbar = (cantProductsToBuy) => {
 
   return (
     <nav className="navbar">
-      <div className="top-bar">MÍNIMO DE COMPRA DE $70.000 || ${"PRECIOS SIN IVA INCLUIDO"}</div>
 
       <div className="nav-container">
         {/* Menú pantalla chica */}
