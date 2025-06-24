@@ -94,6 +94,10 @@
     font-size: 14px;
   }
 
+  .copyright p {
+    margin-bottom: 0;
+  }
+
   .contact {
     margin-bottom: 20px;
     display: flex;
@@ -145,8 +149,7 @@
     width: 100% !important; 
     background: #333;
     color: white;
-    padding: 40px 0;
-    border-top: 1px solid black;
+    padding: 40px 0 0;
     position: relative;
     bottom: 0;
     left: 0;

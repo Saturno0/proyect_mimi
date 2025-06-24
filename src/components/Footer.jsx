@@ -4,13 +4,13 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div>
+        <footer>
             <div className="footer-content">
                 <div className="footer-section">
                     <h2>Navegación</h2>
                     <ul className="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
+                        <li><Link to="/">Inicio</Link></li>
+                        <li><a href="/#productos">Productos</a></li>
                         <li><a href="./pages/newIn.html">Nuevo Ingreso</a></li>
                         <li><a href="#mas-vendidos">Más Vendidos</a></li>
                     </ul>
@@ -35,9 +35,8 @@ const Footer = () => {
 
                     <p>Redes sociales:</p>
                     <div className="social-media">
-                        <a href="#"><img src="./assets/Icons/facebook-brands-.svg" alt="Facebook" /></a>
                         <a href="#"><img src="./assets/Icons/instagram-brands-.svg" alt="Instagram" /></a>
-                        <a href="#"><img src="./assets/Icons/square-twitter-brands-solid.svg" alt="Twitter" /></a>
+                        <a href="#"><img src="./assets/Icons/square-twitter-brands-solid.svg" alt="TikTok" /></a>
                     </div>
                 </div>
             </div>
@@ -45,7 +44,7 @@ const Footer = () => {
             <div className="copyright">
                 <p>&copy; 2023 E-commerce. Todos los derechos reservados.</p>
             </div>
-        </div>
+        </footer>
     )
 }
 

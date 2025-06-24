@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data/products.json";
 const products = data.products;
-import Navbar from "./Navbar";
+import Navbar from './Navbar';
+import Footer from './Footer';
 import "./Product.css";
 
 function Product() {
@@ -26,25 +27,31 @@ function Product() {
         });
     };
 
+    // para mi futuro yo, acordate de utilizar una array
+    // para las imagenes, esta tiene que venir de un jason,
+    // o la BD
+
     const totalItems = Object.values(quantities).reduce((a, b) => a + b, 0);
     const totalPrice = totalItems * producto.price;
 
     return (
-        <div style={{left: "0px"}}>
-            <Navbar/>
-            <div className="breadcrumb">
-                <span>INICIO / {producto.category}</span>
-            </div>
+        <div>
+            <Navbar />
             <div className="product">
-                <div className="photos">
+                {/* Aca este div de photos1 deberia ser un map (esto para hacer a futuro) */}
+                <div className="photos1 show">
                     <img src={producto.image} alt="Vista frontal" />
                     <img src={producto.image} alt="Vista trasera" />
                     <img src={producto.image} alt="Vista detalle 1" />
                     <img src={producto.image} alt="Vista detalle 2" />
                 </div>
+                <div className="photos2">
+                    <img src={producto.image} alt="Vista frontal" />
+                </div>
+
                 <div className="product-info">
                     <h1>{producto.name}</h1>
-                    <h2>${producto.price.toLocaleString()}</h2>
+                    <h2>Precio: ${producto.price.toLocaleString()}</h2>
                     
                     <div className="product-details">
                         <p>{producto.description}</p>
@@ -52,6 +59,7 @@ function Product() {
                         <p>Talle: único</p>
                         <p>Medidas: busto 98cm, largo 59cm</p>
                     </div>
+                    
 
                     <table className="color-table">
                         <thead>
@@ -85,6 +93,7 @@ function Product() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

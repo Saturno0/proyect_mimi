@@ -1,25 +1,23 @@
-.breadcrumb {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 40px;
-    font-family: 'Arial', sans-serif;
-    color: #666;
-    font-size: 14px;
-}
-
 .product {
     display: flex;
     gap: 60px;
     max-width: 1200px;
-    margin: auto;
+    margin: 79px auto auto;
     padding: 20px 40px 120px;
     font-family: 'Arial', sans-serif;
 }
 
-.photos {
+.photos1 {
     flex: 1.2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.photos2 {
+    flex: 1.2;
+    display: none;
+    flex-direction: column;
     gap: 15px;
 }
 
@@ -31,13 +29,14 @@
 }
 
 .product-info {
-    flex: 0.8;
+    flex: 0.8 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    height: var(--photos1-height, 100%);
 }
 
 .product-info h1 {
+    align-self: center;
     font-size: 24px;
     font-weight: 500;
     margin: 0;
@@ -45,9 +44,9 @@
 }
 
 .product-info h2 {
+    margin-top: 15px;
     font-size: 20px;
     color: #333;
-    margin: 0;
     font-weight: 500;
 }
 
@@ -103,7 +102,7 @@
 
 .cart-summary p {
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 18px;
     color: #333;
 }
 
@@ -128,13 +127,63 @@
 
 @media (max-width: 768px) {
     .product {
+        width: 600px;
+        align-items: center;
         flex-direction: column;
         padding: 20px;
         gap: 30px;
     }
+    
+    .product-info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .product-details {
+        margin: 10px 0;;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
 
-    .photos {
-        grid-template-columns: 1fr;
+    table {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    table > * {
+        gap: 10px;
+    }
+
+    .cart-summary {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .cart-summary p {
+        font-size: 16px;
+    }
+
+    .product-details > p {
+        font-size: 17px;
+    }
+
+    .product-info th > *{
+        width: 50%;
+    }
+
+    .photos1 {
+        display: none;
+    }
+
+    .photos2 {
+        width: 50%;
+        display: flex;
     }
 }
   

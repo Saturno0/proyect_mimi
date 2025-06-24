@@ -9,7 +9,7 @@ const Home = () => (
       <Navbar />
     </nav>
     <main>
-      <ProductList />
+      <ProductList id="productos"/>
     </main>
     <footer>
       <Footer/>

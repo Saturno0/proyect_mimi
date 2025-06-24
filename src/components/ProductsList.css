@@ -18,11 +18,8 @@ img {
     margin-right: auto;
 }
 
-.product-list div {
-    border: 1px solid black;
-}
-
 .card {
+    border: 1px solid black;
     padding: 2rem;
     width: 300px;
     height: auto;

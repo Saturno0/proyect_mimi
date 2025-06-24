@@ -8,14 +8,13 @@ const ProductList = () => {
   return (
     <div className="product-list">
       {Products.map((product) => (
-        
-        <div className="card" key={product.id}>
-          <Link  to={`../product/${product.id}`}>
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-          </Link>
-        </div>
+        <Link key={product.id} to={`../product/${product.id}`} className="card">
+          
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
+          
+        </Link>
         
       ))}
     </div>
