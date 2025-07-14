@@ -1,15 +1,16 @@
 import Navbar from "../components/Navbar";
-import Loggin from "../components/Loggin";
+import Checkout from "../components/Checkout";
 import Footer from "../components/Footer";
+import '../styles/Checkout.css'
 
-const LogginPage = () => {
+const CheckoutPage = () => {
     return(
         <>
             <Navbar />
-            <Loggin />
+            <Checkout />
             <Footer />
         </>
     );
 }
 
-export default LogginPage;
+export default CheckoutPage;

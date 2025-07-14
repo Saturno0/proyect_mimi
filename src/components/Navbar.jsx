@@ -1,72 +1,54 @@
-import { useState } from "react";
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import {  useState  } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import LeftMenu from './LeftMenu';
+import RightMenu from './RightMenu';
+import '../styles/Navbar.css';
+import logo from '../assets/img/logo_creado_250x125_centrado.png';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-
-  const products = [
+  /*const products = [
     "Camisetas",
     "Pantalones",
     "Vestidos",
     "Abrigos",
     "Accesorios",
-  ];
+  ]; */
 
-  return (
-    <nav className="navbar">
+   const [menuOpen, setMenuOpen] = useState(false);
+    const totalItems = useSelector((state) => state.cart.totalItems);
+    const user = useSelector((state) => state.user);
+    const navigate = useNavigate();
 
-      <div className="nav-container">
-        {/* Menú pantalla chica */}
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </div>
+    const handleNavigation = () => {
+        if(user.isRegistered) {
+            navigate('/profile'); //La idea es que en un futuro pueda acceder a su perfil
+        } else {
+            navigate('/login');
+        }
+    }
+    
+    return(
+        <header>
+            <nav className="navbar">
+                <div className="nav-container">
 
-        <div className="header-inner flex-row container">
-          {/* Menú izquierdo */}
-          <div className="left-menu">
-            <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-              <li className="dropdown"
-                  onMouseEnter={() => setProductsOpen(true)}
-                  onMouseLeave={() => setProductsOpen(false)}>
-                <span>PRODUCTOS ▾</span>
-                {productsOpen && (
-                  <ul className="dropdown-menu">
-                    {products.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-              <li>NEW IN</li>
-              <li>BESTSELLER</li>
-              <li>VER TODO</li>
-            </ul>
-          </div>
 
-          {/* Logo */}
-          <Link to={`/`}><div id="logo" className="logo">CAMEO</div></Link>
+                    <div className="header-inner flex-row container">
+                        <LeftMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} handleNavigation={handleNavigation} user={user} />
 
-          {/* Menú derecho */}
+                        <div className="logo">
+                            <Link to="/">
+                                <img src={logo} alt="Logo" id="logo" />
+                            </Link>
+                        </div>
 
-          <div className="menu-icon">
-            <Link to={`/carrito`}>CARRITO (0)</Link>
-          </div>
-
-          <div className="right-menu">
-            <ul className="nav-links">
-              <li>BUSCAR</li>
-              <li>ACCEDER</li>
-              <Link to={`/carrito`}><li>CARRITO (0)</li></Link>
-            </ul>
-          </div>
-        </div>
-
-        
-      </div>
-    </nav>
-  );
-};
+                        <RightMenu user={user} totalItems={totalItems} handleNavigation={handleNavigation} />
+                    </div>
+                </div>
+            </nav>
+        </header>
+    );
+}
 
 export default Navbar;

@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Remera Meteoro",
+      "image": "../src/assets/img/remera-meteoro.jpeg",
+      "category": "animados",
+      "description": "Remera de Meteoro",
+      "price": 25,
+      "calificacion": 4.0,
+      "opiniones": 23,
+      "stock": true,
+      "descuento": 20,
+      "precio_actual": 100,
+      "precio_original": 125,
+      "tamaños": ["S", "M", "L", "XL"],
+      "especificaciones": {
+        "material": "Algodón 100%",
+        "peso": "500g",
+        "fabricado_en": "Argentina"
+      },
+      "colores": [
+        { "nombre": "Beige", "cantidad": 0, "stock": 15 },
+        { "nombre": "Blanco", "cantidad": 0, "stock": 15 },
+        { "nombre": "Bordo", "cantidad": 0, "stock": 15 }
+      ],
+      "ingreso": "viejo"
+    },
+    {
+      "id": 2,
+      "name": "Ariana Grande",
+      "image": "../src/assets/img/Ariana-Grande.jpeg",
+      "category": "musica",
+      "description": "Remera de Ariana Grande",
+      "price": 25,
+      "calificacion": 4.0,
+      "opiniones": 23,
+      "stock": true,
+      "descuento": 20,
+      "precio_actual": 100,
+      "precio_original": 125,
+      "tamaños": ["S", "M", "L", "XL"],
+      "especificaciones": {
+        "material": "Algodón 100%",
+        "peso": "500g",
+        "fabricado_en": "Argentina"
+      },
+      "colores": [
+        { "nombre": "Beige", "cantidad": 0, "stock": 15 },
+        { "nombre": "Blanco", "cantidad": 0, "stock": 15 },
+        { "nombre": "Bordo", "cantidad": 0, "stock": 15 }
+      ],
+      "ingreso": "viejo"
+    },
+    {
+      "id": 3,
+      "name": "Remera Rayo McQueen",
+      "image": "../src/assets/img/remera-rayo-mcqueen.jpeg",
+      "category": "animados",
+      "description": "Remera de Rayo McQueen",
+      "price": 25,
+      "calificacion": 4.0,
+      "opiniones": 23,
+      "stock": true,
+      "descuento": 20,
+      "precio_actual": 100,
+      "precio_original": 125,
+      "tamaños": ["S", "M", "L", "XL"],
+      "especificaciones": {
+        "material": "Algodón 100%",
+        "peso": "500g",
+        "fabricado_en": "Argentina"
+      },
+      "colores": [
+        { "nombre": "Beige", "cantidad": 0, "stock": 15 },
+        { "nombre": "Blanco", "cantidad": 0, "stock": 15 },
+        { "nombre": "Bordo", "cantidad": 0, "stock": 15 }
+      ],
+      "ingreso": "viejo"
+    },
+    {
+      "id": 4,
+      "name": "Remera Porche",
+      "image": "../src/assets/img/remera-porche.jpeg",
+      "category": "autos",
+      "description": "Remera de Porche",
+      "price": 25,
+      "calificacion": 4.0,
+      "opiniones": 23,
+      "stock": true,
+      "descuento": 20,
+      "precio_actual": 100,
+      "precio_original": 125,
+      "tamaños": ["S", "M", "L", "XL"],
+      "especificaciones": {
+        "material": "Algodón 100%",
+        "peso": "500g",
+        "fabricado_en": "Argentina"
+      },
+      "colores": [
+        { "nombre": "Beige", "cantidad": 0, "stock": 15 },
+        { "nombre": "Blanco", "cantidad": 0, "stock": 15 },
+        { "nombre": "Bordo", "cantidad": 0, "stock": 15 }
+      ],
+      "ingreso": "viejo"
+    }
+  ]
+}
