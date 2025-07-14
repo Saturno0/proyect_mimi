@@ -34,7 +34,7 @@ const ProductDetail = ({ product }) => {
     const handleAddToCart = () => {
         Object.entries(quantities).forEach(([colorName, qty]) => {
             for (let i = 0; i < qty; i++) {
-                dispatch(addToCart({ name: product.name, id: product.id ,color: colorName, price: product.precio_actual }));
+                dispatch(addToCart({ name: product.name, id: product.id ,color: colorName, price: product.precio_actual, image: product.image }));
             }
         });
 

@@ -9,6 +9,7 @@ const Checkout = () => {
     const navigate = useNavigate();
     const cartItems = useSelector((state) => state.cart.products);
     const user = useSelector((state) => state.user);
+    const shipping = 500;
     const [formData, setFormData] = useState({
         nombre: '',
         email: user.email,
@@ -47,7 +48,6 @@ const Checkout = () => {
         e.preventDefault();
         
         try {
-            const shipping = 500;
             const finalTotal = total + shipping;
 
             const orderData = {
@@ -88,7 +88,35 @@ const Checkout = () => {
                     <CheckOutForm handleSubmit={handleSubmit} formData={formData} handleInputChange={handleInputChange} />
                 </div>
                 <div className="order-summary">
-                    {/* <CartItems items={items} total={total} dispatch={dispatch}/> */}
+                        <h2>Resumen del pedido</h2>
+                        <div className="cart-items">
+                            {items.map((item, index) => (
+                                <div key={index} className="cart-item">
+                                    <div>
+                                        <p>{item.name} - {item.color}</p>
+                                        <p>Cantidad: {item.quantity}</p>
+                                        <p>Precio por unidad: {item.precio_actual}</p>
+                                        <p>Precio subtotal: ${item.precio_actual * item.quantity}</p>
+                                    </div>
+                                    <img src={item.image} alt="image of the item" />
+                                </div>
+                            ))}
+                        </div>
+                        
+                        <div className="order-totals">
+                            <div className="total-row">
+                                <span>Subtotal </span>
+                                <span>${total}</span>
+                            </div>
+                            <div className="total-row">
+                                <span>Envío </span>
+                                <span>${shipping}</span>
+                            </div>
+                            <div className="total-row total">
+                                <span>Total</span>
+                                <span>${total + shipping}</span>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -102,11 +130,12 @@ export default Checkout;
 <div className="order-summary">
                         <h2>Resumen del pedido</h2>
                         <div className="cart-items">
-                            {cartItems.map((item, index) => (
+                            {items.map((item, index) => (
                                 <div key={index} className="cart-item">
                                     <p>{item.name} - {item.color}</p>
                                     <p>Cantidad: {item.quantity}</p>
-                                    <p>Precio: ${item.price * item.quantity}</p>
+                                    <p>Precio por unidad: {item.precio_actual}</p>
+                                    <p>Precio subtotal: ${item.precio_actual * precio.quantity}</p>
                                 </div>
                             ))}
                         </div>
@@ -114,15 +143,15 @@ export default Checkout;
                         <div className="order-totals">
                             <div className="total-row">
                                 <span>Subtotal</span>
-                                <span>${cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0)}</span>
+                                <span>${total}</span>
                             </div>
                             <div className="total-row">
                                 <span>Envío</span>
-                                <span>$500</span>
+                                <span>${shipping}</span>
                             </div>
                             <div className="total-row total">
                                 <span>Total</span>
-                                <span>${cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 500}</span>
+                                <span>${total + shipping}</span>
                             </div>
                         </div>
                     </div>

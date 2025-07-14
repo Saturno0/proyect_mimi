@@ -21,8 +21,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const { name, id, color, price } = action.payload;
-      state.products.push({ name: name, id: id, color: color, precio_actual: price });
+      const { name, id, color, price, image } = action.payload;
+      state.products.push({ name: name, id: id, color: color, precio_actual: price, image: image });
       state.totalItems += 1;
       updateLocalStorage(state);
     },
