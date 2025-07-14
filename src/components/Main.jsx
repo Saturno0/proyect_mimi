@@ -2,13 +2,14 @@
 import ProductsLister from './ProductsLister';
 // import Slides from './Slides';
 import PropTypes from 'prop-types';
+import Slides from './Slice';
 
 
 const Main = ( {products} ) =>{
 
     return(
         <main>
-            {/* <Slides /> */}
+            <Slides />
             <section className="products-container" id="productos">
                 <h1>Nuestros Productos</h1>
                 <div className="cards-container">
